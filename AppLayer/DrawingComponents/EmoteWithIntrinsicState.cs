@@ -12,7 +12,7 @@ namespace AppLayer.DrawingComponents
     /// Note that this class is tagged as "internal", which means only components in the AppLayer can acces it.  This helps encapsulate the idea
     /// in the AppLayer and prevent misuse by components in other layers.
     /// </summary>
-    internal class TreeWithIntrinsicState : Tree
+    internal class EmoteWithIntrinsicState : Emote
     {
         public static Color SelectionBackgroundColor { get; set; } = Color.DarkKhaki;
         public string TreeType { get; set; }
@@ -25,15 +25,15 @@ namespace AppLayer.DrawingComponents
             return this;        // Don't really clone
         }
 
-        public void LoadFromResource(string treeType, Type referenceTypeForAssembly)
+        public void LoadFromResource(string emoteType, Type referenceTypeForAssembly)
         {
-            if (string.IsNullOrWhiteSpace(treeType)) return;
+            if (string.IsNullOrWhiteSpace(emoteType)) return;
 
             var assembly = Assembly.GetAssembly(referenceTypeForAssembly);
 
             if (assembly == null) return;
 
-            using (var stream = assembly.GetManifestResourceStream(treeType))
+            using (var stream = assembly.GetManifestResourceStream(emoteType))
             {
                 if (stream == null) return;
                 Image = new Bitmap(stream);
@@ -51,7 +51,7 @@ namespace AppLayer.DrawingComponents
             get { return false; }
             set
             {
-                throw new ApplicationException("Cannot select a tree with only intrinsic state - the intrinsic state is immutable");
+                throw new ApplicationException("Cannot select a emote with only intrinsic state - the intrinsic state is immutable");
             }
         }
 
@@ -61,7 +61,7 @@ namespace AppLayer.DrawingComponents
             get { return new Point(); }
             set
             {
-                throw new ApplicationException("Cannot change a tree with only intrinsic state - the intrinsic state is immutable");
+                throw new ApplicationException("Cannot change a emote with only intrinsic state - the intrinsic state is immutable");
             }
         }
 
@@ -70,13 +70,13 @@ namespace AppLayer.DrawingComponents
             get { return new Size(); }
             set
             {
-                throw new ApplicationException("Cannot change a tree with only intrinsic state - the intrinsic state is immutable");
+                throw new ApplicationException("Cannot change a emote with only intrinsic state - the intrinsic state is immutable");
             }
         }
 
         public override void Draw(Graphics graphics)
         {
-            throw new ApplicationException("Cannot draw a tree with only intrinsic state");
+            throw new ApplicationException("Cannot draw a emote with only intrinsic state");
         }
     }
 }

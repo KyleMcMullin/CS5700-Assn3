@@ -43,8 +43,8 @@ namespace Forests
         {
             InitializeComponent();
 
-            TreeFactory.Instance.ResourceNamePattern = @"Forests.Graphics.{0}.png";
-            TreeFactory.Instance.ReferenceType = typeof(Program);
+            EmoteFactory.Instance.ResourceNamePattern = @"Forests.Graphics.{0}.png";
+            EmoteFactory.Instance.ReferenceType = typeof(Program);
 
             _drawing = new Drawing();
             _invoker = new Invoker();
@@ -156,7 +156,7 @@ namespace Forests
                     break;
                 case PossibleModes.TreeDrawing:
                     if (!string.IsNullOrWhiteSpace(_currentTreeResource))
-                        CommandFactory.Instance.CreateAndDo("addtree", _currentTreeResource, e.Location, _currentScale);
+                        CommandFactory.Instance.CreateAndDo("addemote", _currentTreeResource, e.Location, _currentScale);
                     break;
                 case PossibleModes.Selection:
                     CommandFactory.Instance.CreateAndDo("select", e.Location);

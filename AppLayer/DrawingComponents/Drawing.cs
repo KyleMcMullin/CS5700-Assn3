@@ -11,7 +11,7 @@ namespace AppLayer.DrawingComponents
     public class Drawing
     {
         private static readonly DataContractJsonSerializer JsonSerializer =
-                new DataContractJsonSerializer(typeof(List<Element>), new [] { typeof(Element), typeof(Tree), typeof(TreeWithAllState), typeof(TreeExtrinsicState), typeof(LabeledBox), typeof(Line) });
+                new DataContractJsonSerializer(typeof(List<Element>), new [] { typeof(Element), typeof(Emote), typeof(EmoteWithAllState), typeof(EmoteExtrinsicState), typeof(LabeledBox), typeof(Line) });
 
         private readonly List<Element> _elements = new List<Element>();
         private readonly object _myLock = new object();
@@ -46,13 +46,13 @@ namespace AppLayer.DrawingComponents
 
             lock (_myLock)
             {
-                // Since only the extrinsic state is saved, recreate the full tree objects
+                // Since only the extrinsic state is saved, recreate the full emote objects
                 foreach (var element in loadedElements)
                 {
-                    var tmpTree = element as TreeWithAllState;
+                    var tmpTree = element as EmoteWithAllState;
                     if (tmpTree != null)
                     {
-                        Tree fullTree = TreeFactory.Instance.GetTree(tmpTree.ExtrinsicState);
+                        Emote fullTree = EmoteFactory.Instance.GetEmote(tmpTree.ExtrinsicState);
                         _elements.Add(fullTree);
                     }
                     else

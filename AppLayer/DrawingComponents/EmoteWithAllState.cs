@@ -5,21 +5,21 @@ namespace AppLayer.DrawingComponents
 {
     /// <summary>
     /// This class plays a role in two different patterns: a Flyweight and a Decorator.  For the Flyweight, this
-    /// class represent a "whole" tree that combines both intrinsic state part and the extrinsic state part.
+    /// class represent a "whole" emote that combines both intrinsic state part and the extrinsic state part.
     /// Objects of this class only need to exist for short period time, like a drawing session.
     /// 
     /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to TreeWithIntrinsic State objects
     /// </summary>
     [DataContract]
-    public class TreeWithAllState : Tree
+    public class EmoteWithAllState : Emote
     {
         public Pen OutlinePen { get; set; } = new Pen(Color.DarkGray);
-        internal TreeWithIntrinsicState IntrinsicState { get; }
+        internal EmoteWithIntrinsicState IntrinsicState { get; }
 
         [DataMember]
-        public TreeExtrinsicState ExtrinsicState { get; set; }
+        public EmoteExtrinsicState ExtrinsicState { get; set; }
 
-        internal TreeWithAllState(TreeWithIntrinsicState sharedPart, TreeExtrinsicState nonsharedPart)
+        internal EmoteWithAllState(EmoteWithIntrinsicState sharedPart, EmoteExtrinsicState nonsharedPart)
         {
             IntrinsicState = sharedPart;                // From a decorator perspective, this is the decorated object
             ExtrinsicState = nonsharedPart;            // From a decorator perspective, this is the added feature or
@@ -46,7 +46,7 @@ namespace AppLayer.DrawingComponents
 
         public override Element Clone()
         {
-            return new TreeWithAllState(IntrinsicState, ExtrinsicState = ExtrinsicState.Clone());
+            return new EmoteWithAllState(IntrinsicState, ExtrinsicState = ExtrinsicState.Clone());
         }
 
         public override void Draw(Graphics graphics)

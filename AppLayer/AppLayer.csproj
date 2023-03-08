@@ -46,7 +46,7 @@
     <Compile Include="Command\AddBoxCommand.cs" />
     <Compile Include="Command\AddLineCommand.cs" />
     <Compile Include="Command\Command.cs" />
-    <Compile Include="Command\AddTreeCommand.cs" />
+    <Compile Include="Command\AddEmoteCommand.cs" />
     <Compile Include="Command\CommandFactory.cs" />
     <Compile Include="Command\DeselectAllCommand.cs" />
     <Compile Include="Command\Invoker.cs" />
@@ -63,11 +63,11 @@
     <Compile Include="DrawingComponents\IGraphicsWithSelection.cs" />
     <Compile Include="DrawingComponents\LabeledBox.cs" />
     <Compile Include="DrawingComponents\Line.cs" />
-    <Compile Include="DrawingComponents\Tree.cs" />
-    <Compile Include="DrawingComponents\TreeExtrinsicState.cs" />
-    <Compile Include="DrawingComponents\TreeFactory.cs" />
-    <Compile Include="DrawingComponents\TreeWithAllState.cs" />
-    <Compile Include="DrawingComponents\TreeWithIntrinsicState.cs" />
+    <Compile Include="DrawingComponents\Emote.cs" />
+    <Compile Include="DrawingComponents\EmoteExtrinsicState.cs" />
+    <Compile Include="DrawingComponents\EmoteFactory.cs" />
+    <Compile Include="DrawingComponents\EmoteWithAllState.cs" />
+    <Compile Include="DrawingComponents\EmoteWithIntrinsicState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

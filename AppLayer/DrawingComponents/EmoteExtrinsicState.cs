@@ -4,10 +4,10 @@ using System.Runtime.Serialization;
 namespace AppLayer.DrawingComponents
 {
     [DataContract]
-    public class TreeExtrinsicState
+    public class EmoteExtrinsicState
     {
         [DataMember]
-        public string TreeType { get; set; }
+        public string EmoteType { get; set; }
 
         [DataMember]
         public Point Location { get; set; }
@@ -18,11 +18,11 @@ namespace AppLayer.DrawingComponents
         [DataMember]
         public bool IsSelected { get; set; }
 
-        public TreeExtrinsicState Clone()
+        public EmoteExtrinsicState Clone()
         {
-            return new TreeExtrinsicState()
+            return new EmoteExtrinsicState()
             {
-                TreeType = TreeType,
+                EmoteType = EmoteType,
                 Location = Location,
                 Size = Size,
                 IsSelected = IsSelected
