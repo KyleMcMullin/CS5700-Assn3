@@ -15,7 +15,7 @@ namespace AppLayer.DrawingComponents
     internal class EmoteWithIntrinsicState : Emote
     {
         public static Color SelectionBackgroundColor { get; set; } = Color.DarkKhaki;
-        public string TreeType { get; set; }
+        public string EmoteType { get; set; }
         public Bitmap Image { get; private set; }
         public Bitmap ToolImage { get; private set; }
         public Bitmap ToolImageSelected { get; private set; }

@@ -46,12 +46,12 @@
             this.scale = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.emote01Button = new System.Windows.Forms.ToolStripButton();
-            this.tree02Button = new System.Windows.Forms.ToolStripButton();
-            this.tree03Button = new System.Windows.Forms.ToolStripButton();
-            this.tree04Button = new System.Windows.Forms.ToolStripButton();
-            this.tree05Button = new System.Windows.Forms.ToolStripButton();
-            this.tree06Button = new System.Windows.Forms.ToolStripButton();
-            this.tree07Button = new System.Windows.Forms.ToolStripButton();
+            this.emote02Button = new System.Windows.Forms.ToolStripButton();
+            this.emote03Button = new System.Windows.Forms.ToolStripButton();
+            this.emote04Button = new System.Windows.Forms.ToolStripButton();
+            this.emote05Button = new System.Windows.Forms.ToolStripButton();
+            this.emote06Button = new System.Windows.Forms.ToolStripButton();
+            this.emote07Button = new System.Windows.Forms.ToolStripButton();
             this.lineButton = new System.Windows.Forms.ToolStripButton();
             this.labelBoxButton = new System.Windows.Forms.ToolStripButton();
             this.fileToolStrip.SuspendLayout();
@@ -168,12 +168,12 @@
             this.scale,
             this.toolStripSeparator1,
             this.emote01Button,
-            this.tree02Button,
-            this.tree03Button,
-            this.tree04Button,
-            this.tree05Button,
-            this.tree06Button,
-            this.tree07Button,
+            this.emote02Button,
+            this.emote03Button,
+            this.emote04Button,
+            this.emote05Button,
+            this.emote06Button,
+            this.emote07Button,
             this.lineButton,
             this.labelBoxButton});
             this.drawingToolStrip.Location = new System.Drawing.Point(0, 64);
@@ -232,76 +232,78 @@
             this.emote01Button.Name = "emote01Button";
             this.emote01Button.Size = new System.Drawing.Size(61, 61);
             this.emote01Button.Text = "Emote-01";
-            this.emote01Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote01Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree02Button
+            // emote02Button
             // 
-            this.tree02Button.AutoSize = false;
-            this.tree02Button.CheckOnClick = true;
-            this.tree02Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree02Button.Image = ((System.Drawing.Image)(resources.GetObject("tree02Button.Image")));
-            this.tree02Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree02Button.Name = "tree02Button";
-            this.tree02Button.Size = new System.Drawing.Size(61, 61);
-            this.tree02Button.Text = "Tree-02";
-            this.tree02Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote02Button.AutoSize = false;
+            this.emote02Button.CheckOnClick = true;
+            this.emote02Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote02Button.Image = ((System.Drawing.Image)(resources.GetObject("emote02Button.Image")));
+            this.emote02Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote02Button.Name = "emote02Button";
+            this.emote02Button.Size = new System.Drawing.Size(61, 61);
+            this.emote02Button.Text = "Tree-02";
+            this.emote02Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree03Button
+            // emote03Button
             // 
-            this.tree03Button.AutoSize = false;
-            this.tree03Button.CheckOnClick = true;
-            this.tree03Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree03Button.Image = ((System.Drawing.Image)(resources.GetObject("tree03Button.Image")));
-            this.tree03Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree03Button.Name = "tree03Button";
-            this.tree03Button.Size = new System.Drawing.Size(61, 61);
-            this.tree03Button.Text = "Tree-03";
-            this.tree03Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote03Button.AutoSize = false;
+            this.emote03Button.CheckOnClick = true;
+            this.emote03Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote03Button.Image = ((System.Drawing.Image)(resources.GetObject("emote03Button.Image")));
+            this.emote03Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote03Button.Name = "emote03Button";
+            this.emote03Button.Size = new System.Drawing.Size(61, 61);
+            this.emote03Button.Text = "Tree-03";
+            this.emote03Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree04Button
+            // emote04Button
             // 
-            this.tree04Button.CheckOnClick = true;
-            this.tree04Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree04Button.Image = ((System.Drawing.Image)(resources.GetObject("tree04Button.Image")));
-            this.tree04Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree04Button.Name = "tree04Button";
-            this.tree04Button.Size = new System.Drawing.Size(90, 68);
-            this.tree04Button.Text = "Tree-04";
-            this.tree04Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote04Button.CheckOnClick = true;
+            this.emote04Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote04Button.Image = ((System.Drawing.Image)(resources.GetObject("emote04Button.Image")));
+            this.emote04Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote04Button.Name = "emote04Button";
+            this.emote04Button.Size = new System.Drawing.Size(90, 68);
+            this.emote04Button.Text = "Tree-04";
+            this.emote04Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree05Button
+            // emote05Button
             // 
-            this.tree05Button.CheckOnClick = true;
-            this.tree05Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree05Button.Image = ((System.Drawing.Image)(resources.GetObject("tree05Button.Image")));
-            this.tree05Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree05Button.Name = "tree05Button";
-            this.tree05Button.Size = new System.Drawing.Size(90, 68);
-            this.tree05Button.Text = "Tree-05";
-            this.tree05Button.ToolTipText = "Tree-05";
-            this.tree05Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote05Button.CheckOnClick = true;
+            this.emote05Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote05Button.Image = ((System.Drawing.Image)(resources.GetObject("emote05Button.Image")));
+            this.emote05Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote05Button.Name = "emote05Button";
+            this.emote05Button.Size = new System.Drawing.Size(90, 68);
+            this.emote05Button.Text = "Tree-05";
+            this.emote05Button.ToolTipText = "Emote-05";
+            this.emote05Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree06Button
+            // emote06Button
             // 
-            this.tree06Button.CheckOnClick = true;
-            this.tree06Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree06Button.Image = ((System.Drawing.Image)(resources.GetObject("tree06Button.Image")));
-            this.tree06Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree06Button.Name = "tree06Button";
-            this.tree06Button.Size = new System.Drawing.Size(90, 68);
-            this.tree06Button.Text = "Tree-06";
-            this.tree06Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote06Button.CheckOnClick = true;
+            this.emote06Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote06Button.Image = ((System.Drawing.Image)(resources.GetObject("emote06Button.Image")));
+            this.emote06Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote06Button.Name = "emote06Button";
+            this.emote06Button.Size = new System.Drawing.Size(90, 68);
+            this.emote06Button.Text = "Tree-06";
+            this.emote06Button.ToolTipText = "Emote-06";
+            this.emote06Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
-            // tree07Button
+            // emote07Button
             // 
-            this.tree07Button.CheckOnClick = true;
-            this.tree07Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tree07Button.Image = ((System.Drawing.Image)(resources.GetObject("tree07Button.Image")));
-            this.tree07Button.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tree07Button.Name = "tree07Button";
-            this.tree07Button.Size = new System.Drawing.Size(90, 68);
-            this.tree07Button.Text = "Tree-07";
-            this.tree07Button.Click += new System.EventHandler(this.treeButton_Click);
+            this.emote07Button.CheckOnClick = true;
+            this.emote07Button.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.emote07Button.Image = ((System.Drawing.Image)(resources.GetObject("emote07Button.Image")));
+            this.emote07Button.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.emote07Button.Name = "emote07Button";
+            this.emote07Button.Size = new System.Drawing.Size(90, 68);
+            this.emote07Button.Text = "Tree-07";
+            this.emote07Button.ToolTipText = "Emote-07";
+            this.emote07Button.Click += new System.EventHandler(this.emoteButton_Click);
             // 
             // lineButton
             // 
@@ -359,13 +361,13 @@
         private System.Windows.Forms.ToolStrip drawingToolStrip;
         private System.Windows.Forms.ToolStripButton pointerButton;
         private System.Windows.Forms.ToolStripButton emote01Button;
-        private System.Windows.Forms.ToolStripButton tree02Button;
-        private System.Windows.Forms.ToolStripButton tree03Button;
+        private System.Windows.Forms.ToolStripButton emote02Button;
+        private System.Windows.Forms.ToolStripButton emote03Button;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tree04Button;
-        private System.Windows.Forms.ToolStripButton tree05Button;
-        private System.Windows.Forms.ToolStripButton tree06Button;
-        private System.Windows.Forms.ToolStripButton tree07Button;
+        private System.Windows.Forms.ToolStripButton emote04Button;
+        private System.Windows.Forms.ToolStripButton emote05Button;
+        private System.Windows.Forms.ToolStripButton emote06Button;
+        private System.Windows.Forms.ToolStripButton emote07Button;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel scaleLabel;
         private System.Windows.Forms.ToolStripTextBox scale;

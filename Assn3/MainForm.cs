@@ -14,7 +14,7 @@ namespace Forests
         private readonly Drawing _drawing;
         private bool _forceRedraw;
         private readonly Invoker _invoker;
-        private string _currentTreeResource;
+        private string _currentEmoteResource;
         private float _currentScale = 1;
         private bool _showRubberBand;
         private bool _eraseLastRubberBand;
@@ -27,7 +27,7 @@ namespace Forests
         private enum PossibleModes
         {
             None,
-            TreeDrawing,
+            EmoteDrawing,
             LineDrawing,
             BoxDrawing,
             Selection
@@ -103,7 +103,7 @@ namespace Forests
             if (button!=null && button.Checked)
             {
                 _mode = PossibleModes.Selection;
-                _currentTreeResource = string.Empty;
+                _currentEmoteResource = string.Empty;
             }
             else
             {
@@ -112,18 +112,18 @@ namespace Forests
             }
         }
 
-        private void treeButton_Click(object sender, EventArgs e)
+        private void emoteButton_Click(object sender, EventArgs e)
         {
             var button = sender as ToolStripButton;
             ClearOtherSelectedTools(button);
 
             if (button != null && button.Checked)
-                _currentTreeResource = button.Text;
+                _currentEmoteResource = button.Text;
             else
-                _currentTreeResource = string.Empty;
+                _currentEmoteResource = string.Empty;
 
             CommandFactory.Instance.CreateAndDo("deselect");
-            _mode = (_currentTreeResource != string.Empty) ? PossibleModes.TreeDrawing : PossibleModes.None;
+            _mode = (_currentEmoteResource != string.Empty) ? PossibleModes.EmoteDrawing : PossibleModes.None;
         }
 
         private void drawingPanel_MouseUp(object sender, MouseEventArgs e)
@@ -154,9 +154,9 @@ namespace Forests
                 case PossibleModes.LineDrawing:
                     CommandFactory.Instance.CreateAndDo("addline", _startingPoint, e.Location);
                     break;
-                case PossibleModes.TreeDrawing:
-                    if (!string.IsNullOrWhiteSpace(_currentTreeResource))
-                        CommandFactory.Instance.CreateAndDo("addemote", _currentTreeResource, e.Location, _currentScale);
+                case PossibleModes.EmoteDrawing:
+                    if (!string.IsNullOrWhiteSpace(_currentEmoteResource))
+                        CommandFactory.Instance.CreateAndDo("addemote", _currentEmoteResource, e.Location, _currentScale);
                     break;
                 case PossibleModes.Selection:
                     CommandFactory.Instance.CreateAndDo("select", e.Location);

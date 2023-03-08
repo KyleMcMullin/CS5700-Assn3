@@ -49,11 +49,11 @@ namespace AppLayer.DrawingComponents
                 // Since only the extrinsic state is saved, recreate the full emote objects
                 foreach (var element in loadedElements)
                 {
-                    var tmpTree = element as EmoteWithAllState;
-                    if (tmpTree != null)
+                    var tmpEmote = element as EmoteWithAllState;
+                    if (tmpEmote != null)
                     {
-                        Emote fullTree = EmoteFactory.Instance.GetEmote(tmpTree.ExtrinsicState);
-                        _elements.Add(fullTree);
+                        Emote fullEmote = EmoteFactory.Instance.GetEmote(tmpEmote.ExtrinsicState);
+                        _elements.Add(fullEmote);
                     }
                     else
                     {

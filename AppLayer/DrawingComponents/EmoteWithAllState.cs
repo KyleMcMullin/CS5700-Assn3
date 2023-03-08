@@ -8,7 +8,7 @@ namespace AppLayer.DrawingComponents
     /// class represent a "whole" emote that combines both intrinsic state part and the extrinsic state part.
     /// Objects of this class only need to exist for short period time, like a drawing session.
     /// 
-    /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to TreeWithIntrinsic State objects
+    /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to EmoteWithIntrinsic State objects
     /// </summary>
     [DataContract]
     public class EmoteWithAllState : Emote
