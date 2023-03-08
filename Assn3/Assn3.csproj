@@ -99,15 +99,13 @@
     <EmbeddedResource Include="Graphics\PointerIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Graphics\Tree-02.png" />
-    <EmbeddedResource Include="Graphics\Tree-03.png" />
-    <EmbeddedResource Include="Graphics\Tree-04.png" />
-    <EmbeddedResource Include="Graphics\Tree-05.png" />
-    <EmbeddedResource Include="Graphics\Tree-06.png" />
-    <EmbeddedResource Include="Graphics\Tree-07.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Graphics\Emote-01.png" />
+    <EmbeddedResource Include="Graphics\Emote-02.png" />
+    <EmbeddedResource Include="Graphics\Emote-05.png" />
+    <EmbeddedResource Include="Graphics\Emote-03.png" />
+    <EmbeddedResource Include="Graphics\Emote-04.png" />
+    <EmbeddedResource Include="Graphics\Emote-06.png" />
+    <EmbeddedResource Include="Graphics\Emote-07.png" />
     <Content Include="Graphics\New.png" />
     <Content Include="Graphics\Open.png" />
     <Content Include="Graphics\Save.png" />

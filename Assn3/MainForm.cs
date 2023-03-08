@@ -74,7 +74,7 @@ namespace Forests
                 _panelGraphics = drawingPanel.CreateGraphics();
             }
 
-            if (_drawing.Draw(_imageBufferGraphics, _forceRedraw))
+            if (_drawing.Draw(_imageBufferGraphics, drawingPanel.BackColor, _forceRedraw))
                 _panelGraphics.DrawImageUnscaled(_imageBuffer, 0, 0);
 
             _forceRedraw = false;
@@ -337,6 +337,20 @@ namespace Forests
                         new Point(drawingPanel.ClientRectangle.Left + location.X,
                         drawingPanel.ClientRectangle.Top + location.Y));
             return p4;
+        }
+
+        private void backgroundButton_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                drawingPanel.BackColor = colorDialog.Color;
+            }
+        }
+
+        private void drawingPanel_BackColorChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
