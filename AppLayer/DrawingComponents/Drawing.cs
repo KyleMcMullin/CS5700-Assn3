@@ -11,11 +11,12 @@ namespace AppLayer.DrawingComponents
     public class Drawing
     {
         private static readonly DataContractJsonSerializer JsonSerializer =
-                new DataContractJsonSerializer(typeof(List<Element>), new [] { typeof(Element), typeof(Emote), typeof(EmoteWithAllState), typeof(EmoteExtrinsicState), typeof(LabeledBox), typeof(Line) });
+                new DataContractJsonSerializer(typeof(List<Element>), new[] { typeof(Element), typeof(Emote), typeof(EmoteWithAllState), typeof(EmoteExtrinsicState), typeof(LabeledBox), typeof(Line) });
 
         private readonly List<Element> _elements = new List<Element>();
         private readonly object _myLock = new object();
 
+        private int _color { get; set; } = -1;
         public bool IsDirty { get; set; } = true;
 
         public List<Element> GetCloneOfElements()
@@ -36,6 +37,15 @@ namespace AppLayer.DrawingComponents
                 _elements.Clear();
                 IsDirty = true;
             }
+        }
+
+        public void ChangeBackground(int color)
+        {
+            lock (_myLock)
+            {
+                _color = color;
+                IsDirty = true;
+            }    
         }
 
         public void LoadFromStream(Stream stream)
@@ -96,6 +106,11 @@ namespace AppLayer.DrawingComponents
             return elementsToDelete;
         }
 
+        public int GetCurrentColor()
+        {
+            return _color;
+        }
+
         public void DeleteElement(Element element)
         {
             lock (_myLock)
@@ -130,13 +145,13 @@ namespace AppLayer.DrawingComponents
             return selectedElements;
         }
 
-        public bool Draw(Graphics graphics, Color color, bool redrawEvenIfNotDirty = false)
+        public bool Draw(Graphics graphics, bool redrawEvenIfNotDirty = false)
         {
             lock (_myLock)
             {
                 if (!IsDirty && !redrawEvenIfNotDirty) return false;
-
-                graphics.Clear(color);
+                
+                graphics.Clear(Color.FromArgb(_color));
                 foreach (var t in _elements)
                     t.Draw(graphics);
                 IsDirty = false;

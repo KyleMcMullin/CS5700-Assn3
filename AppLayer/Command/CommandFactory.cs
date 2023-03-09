@@ -85,6 +85,9 @@ namespace AppLayer.Command
                 case "REMOVE":
                     command = new RemoveSelectedCommand();
                     break;
+                case "UPDATEBACKGROUND":
+                    command = new UpdateBackgroundCommand(commandParameters);
+                    break;
                 case "SELECT":
                     command = new SelectCommand(commandParameters);
                     break;

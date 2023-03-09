@@ -74,7 +74,7 @@ namespace Forests
                 _panelGraphics = drawingPanel.CreateGraphics();
             }
 
-            if (_drawing.Draw(_imageBufferGraphics, drawingPanel.BackColor, _forceRedraw))
+            if (_drawing.Draw(_imageBufferGraphics, _forceRedraw))
                 _panelGraphics.DrawImageUnscaled(_imageBuffer, 0, 0);
 
             _forceRedraw = false;
@@ -344,7 +344,7 @@ namespace Forests
             ColorDialog colorDialog = new ColorDialog();
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
-                drawingPanel.BackColor = colorDialog.Color;
+                CommandFactory.Instance.CreateAndDo("updatebackground", colorDialog.Color.ToArgb().ToString());             
             }
         }
 
