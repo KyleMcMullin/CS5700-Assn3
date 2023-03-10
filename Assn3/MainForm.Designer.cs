@@ -41,6 +41,7 @@
             this.redoButton = new System.Windows.Forms.ToolStripButton();
             this.drawingToolStrip = new System.Windows.Forms.ToolStrip();
             this.pointerButton = new System.Windows.Forms.ToolStripButton();
+            this.moveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.scaleLabel = new System.Windows.Forms.ToolStripLabel();
             this.scale = new System.Windows.Forms.ToolStripTextBox();
@@ -54,7 +55,6 @@
             this.emote07Button = new System.Windows.Forms.ToolStripButton();
             this.lineButton = new System.Windows.Forms.ToolStripButton();
             this.labelBoxButton = new System.Windows.Forms.ToolStripButton();
-            this.backgroundButton = new System.Windows.Forms.Button();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -65,7 +65,7 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.moveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.backgroundButton = new System.Windows.Forms.Button();
             this.fileToolStrip.SuspendLayout();
             this.drawingToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -203,7 +203,7 @@
             this.drawingToolStrip.Location = new System.Drawing.Point(0, 64);
             this.drawingToolStrip.Name = "drawingToolStrip";
             this.drawingToolStrip.Padding = new System.Windows.Forms.Padding(0, 8, 1, 0);
-            this.drawingToolStrip.Size = new System.Drawing.Size(93, 677);
+            this.drawingToolStrip.Size = new System.Drawing.Size(93, 692);
             this.drawingToolStrip.TabIndex = 3;
             this.drawingToolStrip.Text = "Tools";
             // 
@@ -218,6 +218,18 @@
             this.pointerButton.Size = new System.Drawing.Size(61, 50);
             this.pointerButton.Text = "pointerButton";
             this.pointerButton.Click += new System.EventHandler(this.pointerButton_Click);
+            // 
+            // moveToolStripButton
+            // 
+            this.moveToolStripButton.AutoSize = false;
+            this.moveToolStripButton.CheckOnClick = true;
+            this.moveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.moveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("moveToolStripButton.Image")));
+            this.moveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.moveToolStripButton.Name = "moveToolStripButton";
+            this.moveToolStripButton.Size = new System.Drawing.Size(61, 50);
+            this.moveToolStripButton.Text = "MoveTool";
+            this.moveToolStripButton.Click += new System.EventHandler(this.moveToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -351,16 +363,6 @@
             this.labelBoxButton.Text = "Label Box";
             this.labelBoxButton.Click += new System.EventHandler(this.labelBoxButton_Click);
             // 
-            // backgroundButton
-            // 
-            this.backgroundButton.Location = new System.Drawing.Point(323, 12);
-            this.backgroundButton.Name = "backgroundButton";
-            this.backgroundButton.Size = new System.Drawing.Size(75, 34);
-            this.backgroundButton.TabIndex = 4;
-            this.backgroundButton.Text = "Change Background";
-            this.backgroundButton.UseVisualStyleBackColor = true;
-            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
-            // 
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -443,24 +445,22 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(68, 68);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // moveToolStripButton
+            // backgroundButton
             // 
-            this.moveToolStripButton.AutoSize = false;
-            this.moveToolStripButton.CheckOnClick = true;
-            this.moveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.moveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("moveToolStripButton.Image")));
-            this.moveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.moveToolStripButton.Name = "moveToolStripButton";
-            this.moveToolStripButton.Size = new System.Drawing.Size(61, 50);
-            this.moveToolStripButton.Text = "MoveTool";
-            this.moveToolStripButton.Click += new System.EventHandler(this.moveToolStripButton_Click);
+            this.backgroundButton.Location = new System.Drawing.Point(323, 12);
+            this.backgroundButton.Name = "backgroundButton";
+            this.backgroundButton.Size = new System.Drawing.Size(75, 34);
+            this.backgroundButton.TabIndex = 4;
+            this.backgroundButton.Text = "Change Background";
+            this.backgroundButton.UseVisualStyleBackColor = true;
+            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(914, 741);
+            this.ClientSize = new System.Drawing.Size(914, 756);
             this.Controls.Add(this.backgroundButton);
             this.Controls.Add(this.drawingToolStrip);
             this.Controls.Add(this.fileToolStrip);
