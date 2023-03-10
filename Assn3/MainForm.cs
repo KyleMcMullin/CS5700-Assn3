@@ -30,7 +30,8 @@ namespace Forests
             EmoteDrawing,
             LineDrawing,
             BoxDrawing,
-            Selection
+            Selection,
+            Move
         };
 
         private PossibleModes _mode = PossibleModes.None;
@@ -160,6 +161,9 @@ namespace Forests
                     break;
                 case PossibleModes.Selection:
                     CommandFactory.Instance.CreateAndDo("select", e.Location);
+                    break;
+                case PossibleModes.Move:
+                    CommandFactory.Instance.CreateAndDo("moveselected", e.Location);
                     break;
             }
 
@@ -351,6 +355,22 @@ namespace Forests
         private void drawingPanel_BackColorChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void moveToolStripButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as ToolStripButton;
+            ClearOtherSelectedTools(button);
+            
+            if (button != null && button.Checked)
+            {
+                _mode = PossibleModes.Move;
+            }
+            else
+            {
+                CommandFactory.Instance.CreateAndDo("deselect");
+                _mode = PossibleModes.None;
+            }
         }
     }
 }

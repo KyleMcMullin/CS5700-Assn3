@@ -100,6 +100,9 @@ namespace AppLayer.Command
                 case "SAVE":
                     command = new SaveCommand(commandParameters);
                     break;
+                case "MOVESELECTED":
+                    command = new UpdateSelectedCommand(commandParameters);
+                    break;
             }
 
             if (command != null)

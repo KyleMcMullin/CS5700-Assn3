@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -120,6 +121,59 @@ namespace AppLayer.DrawingComponents
             }
         }
 
+        public List<Tuple<Point, Element>> MoveAllSelected(Point location)
+        {
+            List<Tuple<Point, Element>> elementsToMove;
+            lock (_myLock)
+            {
+                //_elements[_elements.IndexOf(element)] = element
+                elementsToMove = new List<Tuple<Point, Element>>();
+                foreach (var t in _elements.Where(t => t.IsSelected))
+                {
+                    if (t.GetType() == typeof(EmoteWithAllState))
+                    {
+                        var emote = (EmoteWithAllState)t;
+                        elementsToMove.Add(new Tuple<Point, Element>(emote.Location, emote));
+                        emote.Location = location;
+                    }
+                }
+                IsDirty = true;
+                DeselectAll();
+            }
+            return elementsToMove;
+        }
+
+        public List<Tuple<Point, Element>> MoveElementsBack(List<Tuple<Point, Element>> elementsToMove)
+        {
+            List<Tuple<Point, Element>> itemsToMove = new List<Tuple<Point, Element>>();
+            lock (_myLock)
+            {
+                elementsToMove.ForEach(t =>
+                {
+                    if (t.Item2.GetType() == typeof(EmoteWithAllState))
+                    {
+                        var emote = (EmoteWithAllState)t.Item2;
+                        itemsToMove.Add(new Tuple<Point, Element>(emote.Location, emote));
+                        emote.Location = t.Item1;
+                    }
+                });
+                IsDirty = true;
+            }
+            return itemsToMove;
+        }
+
+        public void Draw(Graphics graphics)
+        {
+            lock (_myLock)
+            {
+                if (_color != -1)
+                {
+                    graphics.Clear(Color.FromArgb(_color));
+                }
+                _elements.ForEach(t => t.Draw(graphics));
+            }
+        }
+        
         public Element FindElementAtPosition(Point point)
         {
             Element result;

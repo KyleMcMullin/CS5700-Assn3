@@ -24,7 +24,6 @@ namespace AppLayer.Command
             if (_color == 0 || TargetDrawing == null) return false;
 
             _oldColor = TargetDrawing.GetCurrentColor();
-            var color = Color.FromArgb(_color);
             TargetDrawing.ChangeBackground(_color);
             return true;
         }
