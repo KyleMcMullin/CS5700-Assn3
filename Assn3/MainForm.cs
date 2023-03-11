@@ -372,5 +372,22 @@ namespace Forests
                 _mode = PossibleModes.None;
             }
         }
+        
+        private void resizeStripButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as ToolStripButton;
+            ClearOtherSelectedTools(button);
+
+            if (button != null && button.Checked)
+            {
+                CommandFactory.Instance.CreateAndDo("resize", float.Parse(scale.Text));
+            }
+            else
+            {
+                CommandFactory.Instance.CreateAndDo("deselect");
+                _mode = PossibleModes.None;
+            }
+            
+        }
     }
 }

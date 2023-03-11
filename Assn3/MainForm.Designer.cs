@@ -66,6 +66,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.backgroundButton = new System.Windows.Forms.Button();
+            this.resizeStripButton = new System.Windows.Forms.ToolStripButton();
             this.fileToolStrip.SuspendLayout();
             this.drawingToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             this.drawingPanel.BackColor = System.Drawing.Color.White;
             this.drawingPanel.Location = new System.Drawing.Point(96, 67);
             this.drawingPanel.Name = "drawingPanel";
-            this.drawingPanel.Size = new System.Drawing.Size(818, 672);
+            this.drawingPanel.Size = new System.Drawing.Size(818, 698);
             this.drawingPanel.TabIndex = 1;
             this.drawingPanel.BackColorChanged += new System.EventHandler(this.drawingPanel_BackColorChanged);
             this.drawingPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawingPanel_MouseDown);
@@ -180,6 +181,7 @@
             this.toolStripSeparator2,
             this.scaleLabel,
             this.scale,
+            this.resizeStripButton,
             this.toolStripSeparator1,
             this.emote01Button,
             this.emote02Button,
@@ -203,7 +205,7 @@
             this.drawingToolStrip.Location = new System.Drawing.Point(0, 64);
             this.drawingToolStrip.Name = "drawingToolStrip";
             this.drawingToolStrip.Padding = new System.Windows.Forms.Padding(0, 8, 1, 0);
-            this.drawingToolStrip.Size = new System.Drawing.Size(93, 692);
+            this.drawingToolStrip.Size = new System.Drawing.Size(93, 713);
             this.drawingToolStrip.TabIndex = 3;
             this.drawingToolStrip.Text = "Tools";
             // 
@@ -248,6 +250,7 @@
             this.scale.AutoSize = false;
             this.scale.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.scale.Name = "scale";
+            this.scale.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.scale.Size = new System.Drawing.Size(70, 23);
             this.scale.Text = "1";
             this.scale.Leave += new System.EventHandler(this.scale_Leave);
@@ -455,12 +458,25 @@
             this.backgroundButton.UseVisualStyleBackColor = true;
             this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
             // 
+            // resizeStripButton
+            // 
+            this.resizeStripButton.BackColor = System.Drawing.Color.Silver;
+            this.resizeStripButton.CheckOnClick = true;
+            this.resizeStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.resizeStripButton.Image = ((System.Drawing.Image)(resources.GetObject("resizeStripButton.Image")));
+            this.resizeStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.resizeStripButton.Name = "resizeStripButton";
+            this.resizeStripButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.resizeStripButton.Size = new System.Drawing.Size(90, 19);
+            this.resizeStripButton.Text = "Resize Selected";
+            this.resizeStripButton.Click += new System.EventHandler(this.resizeStripButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(914, 756);
+            this.ClientSize = new System.Drawing.Size(914, 777);
             this.Controls.Add(this.backgroundButton);
             this.Controls.Add(this.drawingToolStrip);
             this.Controls.Add(this.fileToolStrip);
@@ -517,6 +533,7 @@
         private System.Windows.Forms.ToolStripButton pasteToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
+        private System.Windows.Forms.ToolStripButton resizeStripButton;
     }
 }
 

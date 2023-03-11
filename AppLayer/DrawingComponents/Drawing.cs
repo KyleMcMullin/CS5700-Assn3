@@ -107,6 +107,47 @@ namespace AppLayer.DrawingComponents
             return elementsToDelete;
         }
 
+        public List<Tuple<Size, Element>> ResizeAllSelected(Size size)
+        {
+            List<Tuple<Size, Element>> elementsToResize = new List<Tuple<Size, Element>>();
+            
+            lock (_myLock)
+            {
+                var tempElements = _elements.FindAll(t => t.IsSelected);
+                foreach (var t in _elements.Where(t => t.IsSelected))
+                {
+                    if (t.GetType() == typeof(EmoteWithAllState))
+                    {
+                        var emote = (EmoteWithAllState)t;
+                        elementsToResize.Add(new Tuple<Size, Element>(emote.Size, emote));
+                        emote.Size = size;
+                    }
+                }
+                IsDirty = true;
+                DeselectAll();
+            }
+            return elementsToResize;
+        }
+
+        public List<Tuple<Size, Element>> ResizeElementsBack(List<Tuple<Size, Element>> elements)
+        {
+            List<Tuple<Size, Element>> elementsToResize = new List<Tuple<Size, Element>>();
+            lock (_myLock)
+            {
+                elements.ForEach(t =>
+                {
+                    if (t.Item2.GetType() == typeof(EmoteWithAllState))
+                    {
+                        var emote = (EmoteWithAllState)t.Item2;
+                        elementsToResize.Add(new Tuple<Size, Element>(emote.Size, emote));
+                        emote.Size = t.Item1;
+                    }
+                });
+                IsDirty = true;
+            }
+            return elementsToResize;
+        }
+
         public int GetCurrentColor()
         {
             return _color;

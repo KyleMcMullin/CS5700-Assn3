@@ -33,6 +33,7 @@ namespace AppLayer.Command
             _movedElements = TargetDrawing?.MoveAllSelected(_location);
             //_oldLocation = TargetDrawing.SelectedLocation;
             //TargetDrawing.SelectedLocation = _location;
+            // TODO UPDAT HERE
             return true;
         }
 

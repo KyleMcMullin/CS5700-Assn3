@@ -103,6 +103,9 @@ namespace AppLayer.Command
                 case "MOVESELECTED":
                     command = new UpdateSelectedCommand(commandParameters);
                     break;
+                case "RESIZE":
+                    command = new ResizeSelectedCommand(commandParameters);
+                    break;
             }
 
             if (command != null)
