@@ -43,9 +43,6 @@ namespace AppLayer.Command
         {
             if (_resizedElements == null || _resizedElements.Count == 0) return;
             _resizedElements = TargetDrawing?.ResizeElementsBack(_resizedElements);
-
-            //foreach (var element in _resizedElements)
-            //    TargetDrawing?.Add(element);
         }
 
         internal override void Redo()

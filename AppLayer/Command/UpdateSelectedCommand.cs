@@ -31,40 +31,19 @@ namespace AppLayer.Command
         {
             if (TargetDrawing == null) return false;
             _movedElements = TargetDrawing?.MoveAllSelected(_location);
-            //_oldLocation = TargetDrawing.SelectedLocation;
-            //TargetDrawing.SelectedLocation = _location;
-            // TODO UPDAT HERE
-            return true;
+            return _movedElements != null && _movedElements.Count > 0;
         }
 
         internal override void Redo()
         {
             if (_movedElements == null || _movedElements.Count == 0) return;
             _movedElements = TargetDrawing?.MoveElementsBack(_movedElements);
-            //foreach (var tup in _movedElements)
-            //{
-            //    if (tup.Item2.GetType() == typeof(Emote))
-            //    {
-            //        var emote = (Emote)tup.Item2;
-            //        emote.Location = tup.Item1;                    
-            //    }
-            //}
-            //TargetDrawing.SelectedLocation = _location;
         }
 
         internal override void Undo()
         {
             if (_movedElements == null || _movedElements.Count == 0) return;
             _movedElements = TargetDrawing?.MoveElementsBack(_movedElements);
-            //foreach (var tup in _movedElements)
-            //{
-            //    if (tup.Item2.GetType() == typeof(Emote))
-            //    {
-            //        var emote = (Emote)tup.Item2;
-            //        emote.Location = tup.Item1;
-            //    }
-            //}
-            //TargetDrawing.SelectedLocation = _oldLocation;
         }
     }
 }
