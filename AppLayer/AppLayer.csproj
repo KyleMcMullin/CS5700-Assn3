@@ -49,6 +49,7 @@
     <Compile Include="Command\AddEmoteCommand.cs" />
     <Compile Include="Command\CommandFactory.cs" />
     <Compile Include="Command\DeselectAllCommand.cs" />
+    <Compile Include="Command\ExportCommand.cs" />
     <Compile Include="Command\Invoker.cs" />
     <Compile Include="Command\LoadCommand.cs" />
     <Compile Include="Command\NewCommand.cs" />

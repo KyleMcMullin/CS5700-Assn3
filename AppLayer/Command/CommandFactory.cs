@@ -106,6 +106,9 @@ namespace AppLayer.Command
                 case "RESIZE":
                     command = new ResizeSelectedCommand(commandParameters);
                     break;
+                case "EXPORT":
+                    command = new ExportCommand(commandParameters);
+                    break;
             }
 
             if (command != null)

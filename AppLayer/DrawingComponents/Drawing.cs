@@ -95,20 +95,22 @@ namespace AppLayer.DrawingComponents
             }
         }
 
-        //public void Export(Graphics graphics) // accept image path as param
-        //{
-        //    try
-        //    {
-        //        var imagePath = "";
-        //        Image image = new Bitmap(1000, 1000);
-        //        var gg = Graphics.FromImage(image);
-        //        var 
-        //    }
-        //    catch (Exception)
-        //    {
-                
-        //    }
-        //}
+        public void Export(string fileName, Bitmap bitmap)
+        {
+            try
+            {
+                Graphics graphics = Graphics.FromImage(bitmap);
+                var write = Draw(graphics, true);
+                if (write)
+                {
+                    bitmap.Save(fileName);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
         public void Add(Element element)
         {

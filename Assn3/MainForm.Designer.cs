@@ -33,19 +33,17 @@
             this.drawingPanel = new System.Windows.Forms.Panel();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
             this.fileToolStrip = new System.Windows.Forms.ToolStrip();
-            this.newButton = new System.Windows.Forms.ToolStripButton();
-            this.openButton = new System.Windows.Forms.ToolStripButton();
-            this.saveButton = new System.Windows.Forms.ToolStripButton();
-            this.deleteButton = new System.Windows.Forms.ToolStripButton();
-            this.undoButton = new System.Windows.Forms.ToolStripButton();
-            this.redoButton = new System.Windows.Forms.ToolStripButton();
             this.drawingToolStrip = new System.Windows.Forms.ToolStrip();
-            this.pointerButton = new System.Windows.Forms.ToolStripButton();
-            this.moveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.scaleLabel = new System.Windows.Forms.ToolStripLabel();
             this.scale = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.backgroundButton = new System.Windows.Forms.Button();
+            this.pointerButton = new System.Windows.Forms.ToolStripButton();
+            this.moveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.resizeStripButton = new System.Windows.Forms.ToolStripButton();
             this.emote01Button = new System.Windows.Forms.ToolStripButton();
             this.emote02Button = new System.Windows.Forms.ToolStripButton();
             this.emote03Button = new System.Windows.Forms.ToolStripButton();
@@ -59,14 +57,17 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.backgroundButton = new System.Windows.Forms.Button();
-            this.resizeStripButton = new System.Windows.Forms.ToolStripButton();
+            this.newButton = new System.Windows.Forms.ToolStripButton();
+            this.openButton = new System.Windows.Forms.ToolStripButton();
+            this.saveButton = new System.Windows.Forms.ToolStripButton();
+            this.deleteButton = new System.Windows.Forms.ToolStripButton();
+            this.undoButton = new System.Windows.Forms.ToolStripButton();
+            this.redoButton = new System.Windows.Forms.ToolStripButton();
+            this.exportButton = new System.Windows.Forms.ToolStripButton();
             this.fileToolStrip.SuspendLayout();
             this.drawingToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -99,75 +100,14 @@
             this.saveButton,
             this.deleteButton,
             this.undoButton,
-            this.redoButton});
+            this.redoButton,
+            this.exportButton});
             this.fileToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fileToolStrip.Name = "fileToolStrip";
             this.fileToolStrip.Size = new System.Drawing.Size(914, 64);
             this.fileToolStrip.TabIndex = 2;
             this.fileToolStrip.Text = "toolStrip1";
-            // 
-            // newButton
-            // 
-            this.newButton.AutoSize = false;
-            this.newButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newButton.Image = ((System.Drawing.Image)(resources.GetObject("newButton.Image")));
-            this.newButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(61, 61);
-            this.newButton.Text = "New";
-            this.newButton.Click += new System.EventHandler(this.newButton_Click);
-            // 
-            // openButton
-            // 
-            this.openButton.AutoSize = false;
-            this.openButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openButton.Image = ((System.Drawing.Image)(resources.GetObject("openButton.Image")));
-            this.openButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(61, 61);
-            this.openButton.Text = "Open Drawing";
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.AutoSize = false;
-            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(61, 61);
-            this.saveButton.Text = "Save Drawing";
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
-            this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(36, 61);
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // undoButton
-            // 
-            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("undoButton.Image")));
-            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(36, 61);
-            this.undoButton.Text = "Undo";
-            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
-            // 
-            // redoButton
-            // 
-            this.redoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.redoButton.Image = ((System.Drawing.Image)(resources.GetObject("redoButton.Image")));
-            this.redoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.redoButton.Name = "redoButton";
-            this.redoButton.Size = new System.Drawing.Size(36, 61);
-            this.redoButton.Text = "Redo";
-            this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
+            this.fileToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.fileToolStrip_ItemClicked);
             // 
             // drawingToolStrip
             // 
@@ -209,30 +149,6 @@
             this.drawingToolStrip.TabIndex = 3;
             this.drawingToolStrip.Text = "Tools";
             // 
-            // pointerButton
-            // 
-            this.pointerButton.AutoSize = false;
-            this.pointerButton.CheckOnClick = true;
-            this.pointerButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pointerButton.Image = ((System.Drawing.Image)(resources.GetObject("pointerButton.Image")));
-            this.pointerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pointerButton.Name = "pointerButton";
-            this.pointerButton.Size = new System.Drawing.Size(61, 50);
-            this.pointerButton.Text = "pointerButton";
-            this.pointerButton.Click += new System.EventHandler(this.pointerButton_Click);
-            // 
-            // moveToolStripButton
-            // 
-            this.moveToolStripButton.AutoSize = false;
-            this.moveToolStripButton.CheckOnClick = true;
-            this.moveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.moveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("moveToolStripButton.Image")));
-            this.moveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.moveToolStripButton.Name = "moveToolStripButton";
-            this.moveToolStripButton.Size = new System.Drawing.Size(61, 50);
-            this.moveToolStripButton.Text = "MoveTool";
-            this.moveToolStripButton.Click += new System.EventHandler(this.moveToolStripButton_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -260,6 +176,63 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(90, 6);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 6);
+            // 
+            // backgroundButton
+            // 
+            this.backgroundButton.Location = new System.Drawing.Point(396, 12);
+            this.backgroundButton.Name = "backgroundButton";
+            this.backgroundButton.Size = new System.Drawing.Size(75, 34);
+            this.backgroundButton.TabIndex = 4;
+            this.backgroundButton.Text = "Change Background";
+            this.backgroundButton.UseVisualStyleBackColor = true;
+            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
+            // 
+            // pointerButton
+            // 
+            this.pointerButton.AutoSize = false;
+            this.pointerButton.CheckOnClick = true;
+            this.pointerButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pointerButton.Image = ((System.Drawing.Image)(resources.GetObject("pointerButton.Image")));
+            this.pointerButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pointerButton.Name = "pointerButton";
+            this.pointerButton.Size = new System.Drawing.Size(61, 50);
+            this.pointerButton.Text = "pointerButton";
+            this.pointerButton.Click += new System.EventHandler(this.pointerButton_Click);
+            // 
+            // moveToolStripButton
+            // 
+            this.moveToolStripButton.AutoSize = false;
+            this.moveToolStripButton.CheckOnClick = true;
+            this.moveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.moveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("moveToolStripButton.Image")));
+            this.moveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.moveToolStripButton.Name = "moveToolStripButton";
+            this.moveToolStripButton.Size = new System.Drawing.Size(61, 50);
+            this.moveToolStripButton.Text = "MoveTool";
+            this.moveToolStripButton.Click += new System.EventHandler(this.moveToolStripButton_Click);
+            // 
+            // resizeStripButton
+            // 
+            this.resizeStripButton.BackColor = System.Drawing.Color.Silver;
+            this.resizeStripButton.CheckOnClick = true;
+            this.resizeStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.resizeStripButton.Image = ((System.Drawing.Image)(resources.GetObject("resizeStripButton.Image")));
+            this.resizeStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.resizeStripButton.Name = "resizeStripButton";
+            this.resizeStripButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.resizeStripButton.Size = new System.Drawing.Size(90, 19);
+            this.resizeStripButton.Text = "Resize Selected";
+            this.resizeStripButton.Click += new System.EventHandler(this.resizeStripButton_Click);
             // 
             // emote01Button
             // 
@@ -402,11 +375,6 @@
             this.printToolStripButton.Size = new System.Drawing.Size(68, 68);
             this.printToolStripButton.Text = "&Print";
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 6);
-            // 
             // cutToolStripButton
             // 
             this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -434,11 +402,6 @@
             this.pasteToolStripButton.Size = new System.Drawing.Size(68, 68);
             this.pasteToolStripButton.Text = "&Paste";
             // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 6);
-            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -448,28 +411,78 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(68, 68);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // backgroundButton
+            // newButton
             // 
-            this.backgroundButton.Location = new System.Drawing.Point(323, 12);
-            this.backgroundButton.Name = "backgroundButton";
-            this.backgroundButton.Size = new System.Drawing.Size(75, 34);
-            this.backgroundButton.TabIndex = 4;
-            this.backgroundButton.Text = "Change Background";
-            this.backgroundButton.UseVisualStyleBackColor = true;
-            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
+            this.newButton.AutoSize = false;
+            this.newButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newButton.Image = ((System.Drawing.Image)(resources.GetObject("newButton.Image")));
+            this.newButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(61, 61);
+            this.newButton.Text = "New";
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
-            // resizeStripButton
+            // openButton
             // 
-            this.resizeStripButton.BackColor = System.Drawing.Color.Silver;
-            this.resizeStripButton.CheckOnClick = true;
-            this.resizeStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.resizeStripButton.Image = ((System.Drawing.Image)(resources.GetObject("resizeStripButton.Image")));
-            this.resizeStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.resizeStripButton.Name = "resizeStripButton";
-            this.resizeStripButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.resizeStripButton.Size = new System.Drawing.Size(90, 19);
-            this.resizeStripButton.Text = "Resize Selected";
-            this.resizeStripButton.Click += new System.EventHandler(this.resizeStripButton_Click);
+            this.openButton.AutoSize = false;
+            this.openButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openButton.Image = ((System.Drawing.Image)(resources.GetObject("openButton.Image")));
+            this.openButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(61, 61);
+            this.openButton.Text = "Open Drawing";
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.AutoSize = false;
+            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
+            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(61, 61);
+            this.saveButton.Text = "Save Drawing";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteButton.Image")));
+            this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(36, 61);
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // undoButton
+            // 
+            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.undoButton.Image = ((System.Drawing.Image)(resources.GetObject("undoButton.Image")));
+            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(36, 61);
+            this.undoButton.Text = "Undo";
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
+            // redoButton
+            // 
+            this.redoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.redoButton.Image = ((System.Drawing.Image)(resources.GetObject("redoButton.Image")));
+            this.redoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.redoButton.Name = "redoButton";
+            this.redoButton.Size = new System.Drawing.Size(36, 61);
+            this.redoButton.Text = "Redo";
+            this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
+            // 
+            // exportButton
+            // 
+            this.exportButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.exportButton.Image = global::Forests.Properties.Resources.exportIcon;
+            this.exportButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(36, 61);
+            this.exportButton.Text = "exportButton";
+            this.exportButton.ToolTipText = "Export";
             // 
             // MainForm
             // 
@@ -534,6 +547,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripButton resizeStripButton;
+        private System.Windows.Forms.ToolStripButton exportButton;
     }
 }
 

@@ -386,8 +386,24 @@ namespace Forests
             {
                 CommandFactory.Instance.CreateAndDo("deselect");
                 _mode = PossibleModes.None;
+            }            
+        }
+
+        private void fileToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(drawingPanel.Width, drawingPanel.Height);
+
+            var dialog = new SaveFileDialog
+            {
+                DefaultExt = "png",
+                RestoreDirectory = true,
+                Filter = @"png files (*.png)|*.png|All files (*.*)|*.*"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                CommandFactory.Instance.CreateAndDo("export", dialog.FileName, bitmap);
             }
-            
         }
     }
 }
