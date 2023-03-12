@@ -60,7 +60,6 @@ namespace AppLayer.DrawingComponents
             }
 
             loadedElements = loadedElements.GetRange(1, loadedElements.Count - 1);
-            //var loadedElements = JsonSerializer.ReadObject(stream) as List<Element>;
 
             if (loadedElements == null || loadedElements.Count == 0) return;
 
@@ -93,8 +92,6 @@ namespace AppLayer.DrawingComponents
                 var objects = new List<Object>() { new Background(_color) };
                 objects.AddRange(_elements);
                 JsonSerializer.WriteObject(stream, objects);
-                //JsonSerializer.WriteObject(stream, new Background(_color));
-                //JsonSerializer.WriteObject(stream, _elements);
             }
         }
 
