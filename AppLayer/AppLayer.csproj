@@ -60,6 +60,7 @@
     <Compile Include="Command\UndoCommand.cs" />
     <Compile Include="Command\UpdateBackgroundCommand.cs" />
     <Compile Include="Command\UpdateSelectedCommand.cs" />
+    <Compile Include="DrawingComponents\Background.cs" />
     <Compile Include="DrawingComponents\Drawing.cs" />
     <Compile Include="DrawingComponents\Element.cs" />
     <Compile Include="DrawingComponents\GraphicsWithSelection.cs" />

@@ -12,7 +12,7 @@ namespace AppLayer.DrawingComponents
     public class Drawing
     {
         private static readonly DataContractJsonSerializer JsonSerializer =
-                new DataContractJsonSerializer(typeof(List<Element>), new[] { typeof(Element), typeof(Emote), typeof(EmoteWithAllState), typeof(EmoteExtrinsicState), typeof(LabeledBox), typeof(Line) });
+                new DataContractJsonSerializer(typeof(List<Object>), new[] { typeof(Element), typeof(Emote), typeof(EmoteWithAllState), typeof(EmoteExtrinsicState), typeof(LabeledBox), typeof(Line), typeof(Background) });
 
         private readonly List<Element> _elements = new List<Element>();
         private readonly object _myLock = new object();
@@ -36,6 +36,7 @@ namespace AppLayer.DrawingComponents
             lock (_myLock)
             {
                 _elements.Clear();
+                _color = -1;
                 IsDirty = true;
             }
         }
@@ -48,10 +49,18 @@ namespace AppLayer.DrawingComponents
                 IsDirty = true;
             }    
         }
-
+        
         public void LoadFromStream(Stream stream)
         {
-            var loadedElements = JsonSerializer.ReadObject(stream) as List<Element>;
+            var loadedElements = JsonSerializer.ReadObject(stream) as List<Object>;
+            var background = loadedElements[0] as Background;
+            if (background != null)
+            {
+                _color = background.Color; // could change this to a background object
+            }
+
+            loadedElements = loadedElements.GetRange(1, loadedElements.Count - 1);
+            //var loadedElements = JsonSerializer.ReadObject(stream) as List<Element>;
 
             if (loadedElements == null || loadedElements.Count == 0) return;
 
@@ -60,15 +69,17 @@ namespace AppLayer.DrawingComponents
                 // Since only the extrinsic state is saved, recreate the full emote objects
                 foreach (var element in loadedElements)
                 {
+                    var tmpElement = element as Element;
+                    if (tmpElement == null) continue;
                     var tmpEmote = element as EmoteWithAllState;
                     if (tmpEmote != null)
                     {
                         Emote fullEmote = EmoteFactory.Instance.GetEmote(tmpEmote.ExtrinsicState);
                         _elements.Add(fullEmote);
                     }
-                    else
+                    else 
                     {
-                        _elements.Add(element);
+                        _elements.Add(tmpElement);
                     }
                 }
                 IsDirty = true;
@@ -79,9 +90,28 @@ namespace AppLayer.DrawingComponents
         {
             lock (_myLock)
             {
-                JsonSerializer.WriteObject(stream, _elements);
+                var objects = new List<Object>() { new Background(_color) };
+                objects.AddRange(_elements);
+                JsonSerializer.WriteObject(stream, objects);
+                //JsonSerializer.WriteObject(stream, new Background(_color));
+                //JsonSerializer.WriteObject(stream, _elements);
             }
         }
+
+        //public void Export(Graphics graphics) // accept image path as param
+        //{
+        //    try
+        //    {
+        //        var imagePath = "";
+        //        Image image = new Bitmap(1000, 1000);
+        //        var gg = Graphics.FromImage(image);
+        //        var 
+        //    }
+        //    catch (Exception)
+        //    {
+                
+        //    }
+        //}
 
         public void Add(Element element)
         {
