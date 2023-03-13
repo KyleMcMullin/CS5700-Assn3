@@ -352,11 +352,6 @@ namespace Forests
             }
         }
 
-        private void drawingPanel_BackColorChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void moveToolStripButton_Click(object sender, EventArgs e)
         {
             var button = sender as ToolStripButton;
@@ -389,7 +384,101 @@ namespace Forests
             }            
         }
 
-        private void fileToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar)
+            {
+                // Delete
+                case 'D':
+                case 'd':
+                    deleteButton.PerformClick();
+                    break;
+
+                case 'C':
+                case 'c':
+                    break;
+
+                case 'U':
+                case 'u':
+                    undoButton.PerformClick();
+                    break;
+
+                case 'R':
+                case 'r':
+                    redoButton.PerformClick();
+                    break;
+                
+                case 'P':
+                case 'p':
+                    pointerButton.PerformClick();
+                    break;
+
+                case 'M':
+                case 'm':
+                    moveToolStripButton.PerformClick();
+                    break;
+
+                case 'A':
+                case 'a':
+                    resizeStripButton.PerformClick();
+                    break;                
+
+                case 'S':
+                case 's':
+                    saveButton.PerformClick();
+                    break;
+
+                case 'E':
+                case 'e':
+                    exportButton.PerformClick();
+                    break;
+
+                case 'O':
+                case 'o':
+                    openButton.PerformClick();
+                    break;
+
+                case 'N':
+                case 'n':
+                    newButton.PerformClick();
+                    break;
+
+                case 'B':
+                case 'b':
+                    backgroundButton.PerformClick();
+                    break;
+
+                case '1':
+                    emote01Button.PerformClick();
+                    break;
+
+                case '2':
+                    emote02Button.PerformClick();
+                    break;
+
+                case '3':
+                    emote03Button.PerformClick();
+                    break;
+
+                case '4':
+                    emote04Button.PerformClick();
+                    break;
+                    
+                case '5':
+                    emote05Button.PerformClick();
+                    break;
+
+                case '6':
+                    emote06Button.PerformClick();
+                    break;
+
+                case '7':
+                    emote07Button.PerformClick();
+                    break;                   
+            }
+        }
+
+        private void exportButton_Click(object sender, EventArgs e)
         {
             Bitmap bitmap = new Bitmap(drawingPanel.Width, drawingPanel.Height);
 

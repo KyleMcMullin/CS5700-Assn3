@@ -107,7 +107,7 @@ namespace AppLayer.DrawingComponents
                 }
             }
             catch (Exception)
-            {
+            { 
 
             }
         }
