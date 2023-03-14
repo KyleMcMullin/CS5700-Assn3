@@ -108,6 +108,7 @@
     <EmbeddedResource Include="Graphics\Emote-07.png" />
     <EmbeddedResource Include="Graphics\moveIcon.png" />
     <EmbeddedResource Include="Graphics\exportIcon.png" />
+    <EmbeddedResource Include="Graphics\copyIcon.png" />
     <Content Include="Graphics\New.png" />
     <Content Include="Graphics\Open.png" />
     <Content Include="Graphics\Save.png" />

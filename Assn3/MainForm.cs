@@ -494,5 +494,21 @@ namespace Forests
                 CommandFactory.Instance.CreateAndDo("export", dialog.FileName, bitmap);
             }
         }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            var button = sender as ToolStripButton;
+            ClearOtherSelectedTools(button);
+
+            if (button != null && button.Checked)
+            {
+                CommandFactory.Instance.CreateAndDo("copy");
+            }
+            else
+            {
+                CommandFactory.Instance.CreateAndDo("deselect");
+                _mode = PossibleModes.None;
+            }
+        }
     }
 }

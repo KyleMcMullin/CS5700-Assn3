@@ -123,6 +123,18 @@ namespace AppLayer.DrawingComponents
             }
         }
 
+        public void Copy(Element element)
+        {
+            if (element == null) return;
+
+            lock (_myLock)
+            {
+                _elements.Add(element);
+                element.IsSelected = true;
+                IsDirty = true;
+            }
+        }
+
         public List<Element> DeleteAllSelected()
         {
             List<Element> elementsToDelete;
