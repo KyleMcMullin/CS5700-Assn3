@@ -396,6 +396,7 @@ namespace Forests
 
                 case 'C':
                 case 'c':
+                    copyButton.PerformClick();
                     break;
 
                 case 'U':
