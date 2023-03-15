@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace UnitTests
 {
     [TestClass]
-    public class TestCommandFactory
+    public class TestCommandsAndFactory
     {
         private CommandFactory _commandFactory;
         private Drawing _drawing;
@@ -44,22 +44,6 @@ namespace UnitTests
             Assert.AreEqual(0, _drawing.GetCloneOfElements().Count);
             Assert.AreEqual(-1, _drawing.GetCurrentColor());
         }
-
-        //[TestMethod]
-        //public void TestCreateAndDo_AddEmoteCommand()
-        //{
-        //    // Arrange
-        //    string commandType = "ADDEMOTE";
-        //    object[] commandParameters = new object[] { "Emote-01", new Point(0, 0), 1.0f };
-
-        //    // Act
-        //    _commandFactory.CreateAndDo(commandType, commandParameters);
-        //    _invoker.Start();
-        //    System.Threading.Thread.Sleep(100);
-            
-        //    // Assert
-        //    Assert.AreEqual(1, _drawing.GetCloneOfElements().Count);
-        //}
 
         [TestMethod]
         public void TestCreateAndDo_AddBoxCommand()
@@ -171,53 +155,44 @@ namespace UnitTests
             Assert.AreEqual(0, _drawing.DeselectAll().Count);
         }
 
-        //[TestMethod]
-        //public void TestCreateAndDo_MoveCommand()
-        //{
-        //    // Arrange
-        //    string commandType = "MOVE";
-        //    object[] commandParameters = new object[] { new Point(0, 0), new Point(100, 100) };
-        //    _commandFactory.CreateAndDo("ADDLINE", new object[] { new Point(0, 0), new Point(100, 100), Color.Black, 5.0f });
-        //    _invoker.Start();
-        //    System.Threading.Thread.Sleep(100);
+        [TestMethod]
+        public void TestUndo()
+        {
+            // Arrange
+            _commandFactory.CreateAndDo("ADDLINE", new object[] { new Point(0, 0), new Point(100, 100), Color.Black, 5.0f });
+            _invoker.Start();
+            System.Threading.Thread.Sleep(100);
 
-        //    _commandFactory.CreateAndDo("SELECT", new object[] { new Point(0, 0) });
-        //    System.Threading.Thread.Sleep(100);
+            // Act
+            _invoker.Undo();
+            _invoker.Start();
+            System.Threading.Thread.Sleep(100);
 
-        //    // Act
-        //    _commandFactory.CreateAndDo(commandType, commandParameters);
-        //    _invoker.Start();
-        //    System.Threading.Thread.Sleep(100);                        
 
-        //    // Assert
-        //    Assert.IsFalse(1, _drawing.DeselectAll().Count);
-        //}
+            // Assert
+            Assert.AreEqual(0, _drawing.GetCloneOfElements().Count);
+        }
 
-        //[TestMethod]
-        //public void TestCreateAndDo_ResizeSelected()
-        //{
+        [TestMethod]
+        public void TestRedo()
+        {
+            // Arrange
+            _commandFactory.CreateAndDo("ADDLINE", new object[] { new Point(0, 0), new Point(100, 100), Color.Black, 5.0f });
+            _invoker.Start();
+            System.Threading.Thread.Sleep(100);
 
-        //}
+            _invoker.Undo();
+            _invoker.Start();
+            System.Threading.Thread.Sleep(100);
 
-        //[TestMethod]
-        //public void TestCreateAndDo_CopySelected()
-        //{
-        //    // Arrange
-        //    string commandType = "COPY";
-        //    _commandFactory.CreateAndDo("ADDLINE", new object[] { new Point(0, 0), new Point(100, 100), Color.Black, 5.0f });
-        //    _invoker.Start();
-        //    System.Threading.Thread.Sleep(100);
+            // Act
+            _invoker.Redo();
+            _invoker.Start();
+            System.Threading.Thread.Sleep(100);
 
-        //    _commandFactory.CreateAndDo("SELECT", new object[] { new Point(0, 0) });
-        //    System.Threading.Thread.Sleep(100);
 
-        //    // Act
-        //    _commandFactory.CreateAndDo(commandType);
-        //    _invoker.Start();
-        //    System.Threading.Thread.Sleep(100);
-
-        //    // Assert
-        //    Assert.AreEqual(2, _drawing.GetCloneOfElements().Count);
-        //}  
+            // Assert
+            Assert.AreEqual(1, _drawing.GetCloneOfElements().Count);
+        }
     }
 }
