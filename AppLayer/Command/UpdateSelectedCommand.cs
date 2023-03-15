@@ -12,8 +12,6 @@ namespace AppLayer.Command
     public class UpdateSelectedCommand : Command
     {
         private Point _location;
-        private Point _oldLocation;
-        //private List<Element> _movedElements;
         private List<Tuple<Point, Element>> _movedElements;
 
         internal UpdateSelectedCommand(params object[] commandParameters)
