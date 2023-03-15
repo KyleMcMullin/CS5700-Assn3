@@ -24,8 +24,6 @@ namespace UnitTests
             _commandFactory = CommandFactory.Instance;
             _drawing = new Drawing();
             _invoker = new Invoker();
-            //_emoteFactory = EmoteFactory.Instance;
-            //_emoteFactory.ReferenceType = typeof(Assn3.Forests.Program);
             _commandFactory.TargetDrawing = _drawing;
             _commandFactory.Invoker = _invoker;
         }

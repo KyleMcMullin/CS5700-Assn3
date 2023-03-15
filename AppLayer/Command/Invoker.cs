@@ -10,6 +10,7 @@ namespace AppLayer.Command
     /// Note: this class does not depend on the Drawing Components, any concrete command classes or the GUI.  Therefore, it is
     /// highly reusable and easy to test.
     /// 
+    /// COMMAND PATTERN
     /// </summary>
     public class Invoker
     {

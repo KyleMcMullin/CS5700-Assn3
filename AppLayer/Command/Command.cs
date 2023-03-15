@@ -6,6 +6,7 @@ namespace AppLayer.Command
     /// Base Command Class
     /// 
     /// This is the abstract Command class prescribed by the command pattern
+    /// COMMAND PATTERN
     /// </summary>
     public abstract class Command
     {

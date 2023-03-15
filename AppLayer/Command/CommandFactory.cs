@@ -7,6 +7,7 @@ namespace AppLayer.Command
     /// 
     /// Creates standard commands, but can be specialized to create custom commands.  This class is the base
     /// class in a factory method pattern.
+    /// SINGLETON PATTERN AND FACTORY PATTERN
     /// </summary>
     public class CommandFactory
     {

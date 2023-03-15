@@ -9,6 +9,7 @@ namespace AppLayer.DrawingComponents
     /// Objects of this class only need to exist for short period time, like a drawing session.
     /// 
     /// For the decorator pattern, this class is a Decorator.  It add the extrinsic state to EmoteWithIntrinsic State objects
+    /// DECORATOR PATTERN AND FLYWEIGHT PATTERN
     /// </summary>
     [DataContract]
     public class EmoteWithAllState : Emote

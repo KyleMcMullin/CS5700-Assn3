@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace AppLayer.DrawingComponents
 {
+    // SINGLETON PATTERN AND FACTORY PATTERN
     public class EmoteFactory
     {
         private static EmoteFactory _instance;

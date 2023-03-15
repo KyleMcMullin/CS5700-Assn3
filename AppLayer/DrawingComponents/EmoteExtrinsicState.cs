@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace AppLayer.DrawingComponents
 {
+    // DECORATOR
     [DataContract]
     public class EmoteExtrinsicState
     {
